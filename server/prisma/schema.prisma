@@ -6,7 +6,58 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+model User {
+  google_id String @id
+  email     String @unique
+  name      String
+  avatar    String // Will be storaged as URL to google storage
+
+  recipes    Recipe[]
+  comment    Comment[]
+  bookMarked Bookmarked[]
+}
+
+model Recipe {
+  cod_recipe         String   @id @default(uuid())
+  name_recipe        String
+  step_by_step       String
+  date_register      DateTime
+  prep_time_min      Int
+  prep_time_max      Int
+  cape_picture       String // Also storaged as a URL (same applis to the aditional ones)
+  aditional_picture1 String?
+  aditional_picture2 String?
+
+  User          User   @relation(fields: [userGoogle_id], references: [google_id])
+  userGoogle_id String
+
+  comment    Comment[]
+  bookMarked Bookmarked[]
+}
+
+model Comment {
+  User          User   @relation(fields: [userGoogle_id], references: [google_id])
+  userGoogle_id String
+
+  Recipe           Recipe @relation(fields: [recipeCod_recipe], references: [cod_recipe])
+  recipeCod_recipe String
+
+  @@id([userGoogle_id, recipeCod_recipe])
+}
+
+model Bookmarked {
+  User          User   @relation(fields: [userGoogle_id], references: [google_id])
+  userGoogle_id String
+
+  Recipe           Recipe @relation(fields: [recipeCod_recipe], references: [cod_recipe])
+  recipeCod_recipe String
+
+  date_bookmarked DateTime
+
+  @@id([userGoogle_id, recipeCod_recipe])
+}

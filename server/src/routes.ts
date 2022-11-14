@@ -6,4 +6,5 @@ router.get('/', (req, res) => {
     res.json({'message': 'okay'})
 })
 
+
 export default router
