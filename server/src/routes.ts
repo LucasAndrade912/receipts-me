@@ -1,10 +1,20 @@
 import express from 'express'
-
 const router = express.Router()
 
+import { Recipe } from './controllers/Recipe'
+import { User } from './controllers/User'
+
+const getAllRecipes = new Recipe().getAllRecipes
+const getAllUsers = new User().getAllUsers
+
+
 router.get('/', (req, res) => {
-    res.json({'message': 'okay'})
+    res.json({'message': 'Server is running'})
 })
+
+router.get('/recipes', getAllRecipes)
+
+router.get('/users', getAllUsers)
 
 
 export default router
