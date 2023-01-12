@@ -1,4 +1,5 @@
 import { View, Text } from 'native-base'
+import { GoogleLogo } from 'phosphor-react-native'
 
 import { Button } from '../components/Button'
 import { Container } from '../components/Container'
@@ -11,8 +12,14 @@ export function Login() {
           Seja bem-vindo ao {' '} ReceipetsMe 🍜
         </Text>
 
-        <Button w="4/5">
-          <Text color="light.50" fontFamily="medium" fontSize="md" textTransform="uppercase">
+        <Button w="4/5" leftIcon={<GoogleLogo color="#FFF" size={32} weight="bold" />}>
+          <Text
+            color="light.50"
+            fontFamily="medium"
+            fontSize="md"
+            textTransform="uppercase"
+            ml={1}
+          >
             Entrar com o Google
           </Text>
         </Button>
