@@ -42,9 +42,21 @@ export function TabsRoutes() {
         }
       })}
     >
-      <Screen name="receipts" component={Receipts} />
-      <Screen name="receipt" component={Receipt} options={{ tabBarButton: () => null }} />
-      <Screen name="search" component={Search} />
+      <Screen
+        name="receipts"
+        component={Receipts}
+      />
+
+      <Screen
+        name="receipt"
+        component={Receipt}
+        options={{ tabBarButton: () => null }}
+      />
+
+      <Screen
+        name="search"
+        component={Search}
+      />
     </Navigator>
   )
 }

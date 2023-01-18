@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 import { useCallback } from 'react'
-import { StatusBar } from 'expo-status-bar'
+import { StatusBar } from 'react-native'
 import { NativeBaseProvider } from 'native-base'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { NavigationContainer } from '@react-navigation/native'
@@ -12,7 +12,7 @@ import {
 } from '@expo-google-fonts/inter'
 import * as SplashScreen from 'expo-splash-screen'
 
-import { theme } from './utils/theme'
+import { theme } from './lib/theme'
 import { AppRoutes } from './routes/app.routes'
 
 SplashScreen.preventAutoHideAsync()
@@ -39,7 +39,7 @@ export default function App() {
       <NavigationContainer>
         <SafeAreaView onLayout={onLayoutRootView} style={{ flex: 1 }}>
           <AppRoutes />
-          <StatusBar style="auto" translucent />
+          <StatusBar barStyle="light-content" backgroundColor="#D64122" translucent />
         </SafeAreaView>
       </NavigationContainer>
     </NativeBaseProvider>
