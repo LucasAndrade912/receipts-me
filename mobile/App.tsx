@@ -12,8 +12,8 @@ import {
 } from '@expo-google-fonts/inter'
 import * as SplashScreen from 'expo-splash-screen'
 
-import { theme } from './lib/theme'
-import { AppRoutes } from './routes/app.routes'
+import { theme } from './src/lib/theme'
+import { AppRoutes } from './src/routes/app.routes'
 
 SplashScreen.preventAutoHideAsync()
 
