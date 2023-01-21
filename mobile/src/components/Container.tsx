@@ -1,14 +1,9 @@
-import { ReactNode } from 'react'
-import { View } from 'native-base'
+import { Box, IBoxProps } from 'native-base'
 
-interface ContainerProps {
-  children: ReactNode
-}
-
-export function Container({ children }: ContainerProps) {
+export function Container({ children }: IBoxProps) {
   return (
-    <View bgColor="light.50" flex={1}>
+    <Box bgColor="light.50" flex={1} >
       { children }
-    </View>
+    </Box>
   )
 }

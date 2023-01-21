@@ -2,6 +2,8 @@ import { Text } from 'react-native'
 import { ForkKnife, MagnifyingGlass } from 'phosphor-react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
+import { Receipts } from '../screens/Receipts'
+
 type BottomTabNavigatorParamList = {
   receipts: undefined
   receipt: undefined
@@ -9,10 +11,6 @@ type BottomTabNavigatorParamList = {
 }
 
 const { Navigator, Screen } = createBottomTabNavigator<BottomTabNavigatorParamList>()
-
-function Receipts() {
-  return <Text>Receitas</Text>
-}
 
 function Receipt() {
   return <Text>Receita linda</Text>
