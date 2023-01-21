@@ -1,6 +1,6 @@
 import { CLIENT_ID } from '@env'
 import { useEffect } from 'react'
-import { View, Text } from 'native-base'
+import { View, Text, Heading } from 'native-base'
 import { GoogleLogo } from 'phosphor-react-native'
 import * as WebBrowser from 'expo-web-browser'
 import * as AuthSession from 'expo-auth-session'
@@ -32,9 +32,15 @@ export function Login() {
   return (
     <Container>
       <View flex={1} justifyContent="center" alignItems="center">
-        <Text color="dark.50" fontSize="3xl" fontFamily="heading" textAlign="center" marginBottom={32}>
+        <Heading
+          color="dark.50"
+          fontSize="3xl"
+          fontFamily="semibold"
+          textAlign="center"
+          marginBottom={32}
+        >
           Seja bem-vindo ao {' '} ReceipetsMe 🍜
-        </Text>
+        </Heading>
 
         <Button
           w="4/5"
