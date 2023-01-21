@@ -19,9 +19,9 @@ export const theme = extendTheme({
     }
   },
   fonts: {
-    heading: 'Inter_600SemiBold',
+    semibold: 'Inter_600SemiBold',
     medium: 'Inter_500Medium',
-    normal: 'Inter_400Regular'
+    regular: 'Inter_400Regular'
   }
 })
 
@@ -45,9 +45,9 @@ declare module 'native-base' {
       }
     }
     fonts: {
-      heading: string
+      semibold: string
       medium: string
-      normal: string
+      regular: string
     }
   }
 }
