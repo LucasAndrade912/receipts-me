@@ -33,31 +33,65 @@ model Recipe {
   aditional_picture1 String?
   aditional_picture2 String?
 
-  User          User   @relation(fields: [userGoogle_id], references: [google_id])
-  userGoogle_id String
+  User      User   @relation(fields: [google_id], references: [google_id])
+  google_id String
 
-  comment    Comment[]
-  bookMarked Bookmarked[]
+  comment           Comment[]
+  bookMarked        Bookmarked[]
+  Recipe_Ingredient Recipe_Ingredient[]
+  Recipe_Category   Recipe_Category[]
 }
 
 model Comment {
-  User          User   @relation(fields: [userGoogle_id], references: [google_id])
-  userGoogle_id String
+  User      User   @relation(fields: [google_id], references: [google_id])
+  google_id String
 
-  Recipe           Recipe @relation(fields: [recipeCod_recipe], references: [cod_recipe])
-  recipeCod_recipe String
+  Recipe     Recipe @relation(fields: [cod_recipe], references: [cod_recipe])
+  cod_recipe String
 
-  @@id([userGoogle_id, recipeCod_recipe])
+  @@id([google_id, cod_recipe])
 }
 
 model Bookmarked {
-  User          User   @relation(fields: [userGoogle_id], references: [google_id])
-  userGoogle_id String
+  User      User   @relation(fields: [google_id], references: [google_id])
+  google_id String
 
-  Recipe           Recipe @relation(fields: [recipeCod_recipe], references: [cod_recipe])
-  recipeCod_recipe String
+  Recipe     Recipe @relation(fields: [cod_recipe], references: [cod_recipe])
+  cod_recipe String
 
   date_bookmarked DateTime
 
-  @@id([userGoogle_id, recipeCod_recipe])
+  @@id([google_id, cod_recipe])
+}
+
+model Category {
+  cod_category    String            @id @default(uuid())
+  name_category   String
+  Recipe_Category Recipe_Category[]
+}
+
+model Ingredient {
+  cod_ingredient    String              @id @default(uuid())
+  name_ingredient   String
+  Recipe_Ingredient Recipe_Ingredient[]
+}
+
+model Recipe_Ingredient {
+  Recipe     Recipe @relation(fields: [cod_recipe], references: [cod_recipe])
+  cod_recipe String
+
+  Ingredient     Ingredient @relation(fields: [cod_ingredient], references: [cod_ingredient])
+  cod_ingredient String
+
+  @@id([cod_recipe, cod_ingredient])
+}
+
+model Recipe_Category {
+  Recipe     Recipe @relation(fields: [cod_recipe], references: [cod_recipe])
+  cod_recipe String
+
+  Category     Category @relation(fields: [cod_category], references: [cod_category])
+  cod_category String
+
+  @@id([cod_recipe, cod_category])
 }
