@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import { TabsRoutes } from './tabs.routes'
 
+import { Receipt } from '../screens/Receipt'
 import { DrawerHeader } from '../components/DrawerHeader'
 
 const { Navigator, Screen } = createDrawerNavigator()
@@ -49,6 +50,12 @@ export function DrawerRoutes() {
             />
           )
         }}
+      />
+
+      <Screen
+        name="receipt"
+        component={Receipt}
+        options={{ drawerItemStyle: { display: 'none' } }}
       />
     </Navigator>
   )

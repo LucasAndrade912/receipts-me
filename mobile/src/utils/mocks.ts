@@ -13,6 +13,15 @@ type ReceiptCardType = {
   favorited?: boolean
 }[]
 
+type ReceiptType = {
+  title: string
+  imageOne: string
+  imageTwo: string
+  imageThree: string
+  preparationTime: number
+  owner: string
+}
+
 export const categoriesMock: CategoryType = [
   { id: '1', title: '🍹 Bebidas', selected: true },
   { id: '2', title: '🍉 Frutas', selected: true },
@@ -31,3 +40,12 @@ export const receiptsMock: ReceiptCardType = [
   { id: '7', title: 'Bolo de laranja', imageUrl: 'https://images.unsplash.com/photo-1569289481619-ca70735e9756?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80', owner: 'Igor Leite', stars: 19 },
   { id: '8', title: 'Torta de chocolate', imageUrl: 'https://images.unsplash.com/photo-1546898976-9850b9bba1e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80', owner: 'Lucas Andrade', stars: 32, favorited: true },
 ]
+
+export const receiptMock: ReceiptType = {
+  title: 'Torta de maçã',
+  imageOne: 'https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
+  imageTwo: 'https://images.unsplash.com/photo-1506127946181-abb01a32593c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+  imageThree: 'https://images.unsplash.com/photo-1562007908-69cf18a6da04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+  preparationTime: 60,
+  owner: 'Lucas Andrade'
+}

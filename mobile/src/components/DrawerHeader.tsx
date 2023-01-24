@@ -1,27 +1,46 @@
-import { View } from 'native-base'
-import { List } from 'phosphor-react-native'
-import { TouchableOpacity } from 'react-native'
+import { HStack, Pressable, Avatar } from 'native-base'
+import { List, ArrowLeft } from 'phosphor-react-native'
 import { DrawerHeaderProps } from '@react-navigation/drawer'
 
-export function DrawerHeader({ navigation }: DrawerHeaderProps) {
+export function DrawerHeader({ navigation, route }: DrawerHeaderProps) {
+  const { name } = route
+
+  const isReceiptRoute = name === 'receipt'
+
   function handleOpenDrawer() {
     navigation.openDrawer()
   }
 
+  function handleGoBack() {
+    navigation.goBack()
+  }
+
   return (
-    <View
+    <HStack
       height={16}
       bgColor="red.100"
-      flexDirection="row"
       justifyContent="space-between"
       alignItems="center"
       px={6}
     >
-      <TouchableOpacity onPress={handleOpenDrawer} activeOpacity={0.6}>
-        <List size={32} color="#FFF" />
-      </TouchableOpacity>
+      <Pressable
+        onPress={isReceiptRoute ? handleGoBack : handleOpenDrawer}
+        _pressed={{
+          opacity: 0.6
+        }}
+      >
+        {
+          isReceiptRoute
+            ? <ArrowLeft size={32} color="#FFF" />
+            : <List size={32} color="#FFF" />
+        }
+      </Pressable>
 
-      <View w={8} h={8} rounded="full" bgColor="light.50" />
-    </View>
+      <Avatar
+        w={8}
+        h={8}
+        source={{ uri: 'https://github.com/LucasAndrade912.png' }}
+      />
+    </HStack>
   )
 }

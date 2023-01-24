@@ -1,4 +1,5 @@
 import { FlatList, View } from 'native-base'
+import { useNavigation } from '@react-navigation/native'
 
 import { Title } from '../components/Title'
 import { Category } from '../components/Category'
@@ -8,6 +9,8 @@ import { ReceiptCard } from '../components/ReceiptCard'
 import { categoriesMock, receiptsMock } from '../utils/mocks'
 
 export function Receipts() {
+  const { navigate } = useNavigation()
+
   return (
     <Container>
       <View mt={8} ml={6} mb={7}>
@@ -35,7 +38,11 @@ export function Receipts() {
         data={receiptsMock}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
-          <ReceiptCard key={item.id} { ...item } />
+          <ReceiptCard
+            key={item.id}
+            onPress={() => navigate('receipt', { id: item.id })}
+            { ...item }
+          />
         )}
         showsVerticalScrollIndicator={false}
         _contentContainerStyle={{ pb: 6, px: 6 }}

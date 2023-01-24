@@ -4,17 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { Receipts } from '../screens/Receipts'
 
-type BottomTabNavigatorParamList = {
-  receipts: undefined
-  receipt: undefined
-  search: undefined
-}
-
-const { Navigator, Screen } = createBottomTabNavigator<BottomTabNavigatorParamList>()
-
-function Receipt() {
-  return <Text>Receita linda</Text>
-}
+const { Navigator, Screen } = createBottomTabNavigator()
 
 function Search() {
   return <Text>Pesquisa</Text>
@@ -43,12 +33,6 @@ export function TabsRoutes() {
       <Screen
         name="receipts"
         component={Receipts}
-      />
-
-      <Screen
-        name="receipt"
-        component={Receipt}
-        options={{ tabBarButton: () => null }}
       />
 
       <Screen
