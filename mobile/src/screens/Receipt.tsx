@@ -1,89 +1,71 @@
-import { Timer, ForkKnife } from 'phosphor-react-native'
-import { ScrollView, Image, HStack, Text } from 'native-base'
+import { ScrollView, Divider, VStack } from 'native-base'
 
-import { Title } from '../components/Title'
 import { Container } from '../components/Container'
+
+import { Comment } from '../components/Comment'
+import { ReceiptIngredients } from '../components/ReceiptIngredients'
+import { ReceiptPresentation } from '../components/ReceiptPresentation'
+import { ReceiptPreparationMethod } from '../components/ReceiptPreparationMethod'
+import { ReceiptCommentField } from '../components/ReceiptCommentField'
 
 import { receiptMock } from '../utils/mocks'
 
 export function Receipt() {
-  const { title, imageOne, imageTwo, imageThree, preparationTime, owner } = receiptMock
+  const {
+    title,
+    imageOne,
+    imageTwo,
+    imageThree,
+    preparationTime,
+    owner,
+    ingredients,
+    preparationMethod,
+    comments
+  } = receiptMock
 
   return (
     <Container>
       <ScrollView
         py={8}
         px={6}
-        contentContainerStyle={{ alignItems: 'center' }}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ alignItems: 'center', paddingBottom: 80 }}
       >
-        <Image
-          w={48}
-          h={48}
-          mb={8}
-          rounded="full"
-          source={{ uri: imageOne }}
-          alt={title}
+        <ReceiptPresentation
+          title={title}
+          imageOne={imageOne}
+          imageTwo={imageTwo}
+          imageThree={imageThree}
+          preparationTime={preparationTime}
+          owner={owner}
         />
 
-        <Title type="title">
-          { title }
-        </Title>
+        <Divider my={8} bgColor="light.100" />
 
-        <HStack
-          my={8}
-          w="full"
-          justifyContent="space-between"
-        >
-          <Image
-            h={24}
-            rounded="lg"
-            source={{ uri: imageTwo }}
-            alt={title}
-            style={{ width: '55%' }}
-          />
+        <ReceiptIngredients
+          ingredients={ingredients}
+        />
 
-          <Image
-            h={24}
-            rounded="lg"
-            source={{ uri: imageThree }}
-            alt={title}
-            style={{ width: '40%' }}
-          />
-        </HStack>
+        <Divider my={8} bgColor="light.100" />
 
-        <HStack>
-          <HStack mr={12} alignItems="center">
-            <Timer
-              size={14}
-              color="#571A0E"
-              weight="bold"
+        <ReceiptPreparationMethod
+          preparationMethod={preparationMethod}
+        />
+
+        <Divider my={8} bgColor="light.100" />
+
+        <ReceiptCommentField />
+
+        <Divider my={8} bgColor="light.100" />
+
+        <VStack w="full">
+          { comments?.map((comment, index) => (
+            <Comment
+              key={index}
+              { ...comment }
             />
-
-            <Text
-              ml={1}
-              fontSize="xs"
-              fontFamily="medium"
-            >
-              { preparationTime } minutos
-            </Text>
-          </HStack>
-
-          <HStack alignItems="center">
-            <ForkKnife
-              size={14}
-              color="#571A0E"
-              weight="bold"
-            />
-
-            <Text
-              ml={1}
-              fontSize="xs"
-              fontFamily="medium"
-            >
-              { owner }
-            </Text>
-          </HStack>
-        </HStack>
+          )) }
+        </VStack>
       </ScrollView>
     </Container>
   )

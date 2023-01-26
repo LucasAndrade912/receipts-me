@@ -6,7 +6,7 @@ export function Button({ children, ...props }: IButtonProps) {
       bgColor="red.100"
       py={5}
       rounded={8}
-      shadow={7}
+      shadow={2}
       _loading={{
         _spinner: { color: 'light.50' },
       }}

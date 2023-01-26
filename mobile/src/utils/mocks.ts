@@ -16,10 +16,22 @@ type ReceiptCardType = {
 type ReceiptType = {
   title: string
   imageOne: string
-  imageTwo: string
-  imageThree: string
+  imageTwo?: string
+  imageThree?: string
   preparationTime: number
   owner: string
+  ingredients: {
+    quantity: number
+    name: string
+    type?: 'quantity' | 'weight'
+  }[]
+  preparationMethod: string[],
+  comments?: {
+    avatarUrl: string
+    owner: string
+    date: Date
+    comment: string
+  }[]
 }
 
 export const categoriesMock: CategoryType = [
@@ -47,5 +59,32 @@ export const receiptMock: ReceiptType = {
   imageTwo: 'https://images.unsplash.com/photo-1506127946181-abb01a32593c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
   imageThree: 'https://images.unsplash.com/photo-1562007908-69cf18a6da04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
   preparationTime: 60,
-  owner: 'Lucas Andrade'
+  owner: 'Lucas Andrade',
+  ingredients: [
+    { quantity: 3, name: 'Ovos' },
+    { quantity: 1, name: 'Caixa de leite' },
+    { quantity: 5, name: 'Maçãs' },
+    { quantity: 4, name: 'Farinha', type: 'weight' },
+  ],
+  preparationMethod: [
+    'Quebre os ovos em uma panela',
+    'Misture com farinha e leite',
+    'Corte as maçãs',
+    'Coloque no forno por 1 hora',
+    'Está pronta a receita!'
+  ],
+  comments: [
+    {
+      owner: 'Matheus Pereira',
+      avatarUrl: 'https://github.com/MatheusSousa5068.png',
+      comment: 'Que receita incrível :)',
+      date: new Date
+    },
+    {
+      owner: 'Johnner Yelcde',
+      avatarUrl: 'https://github.com/Yelcde.png',
+      comment: 'Receita muito boa e simples, parabéns!',
+      date: new Date
+    },
+  ]
 }

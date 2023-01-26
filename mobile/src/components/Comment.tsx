@@ -26,8 +26,8 @@ export function Comment({ avatarUrl, owner, date, comment }: CommentProps) {
       >
         <HStack alignItems="center">
           <Image
-            w={7}
-            h={7}
+            w={6}
+            h={6}
             source={{ uri: avatarUrl }}
             alt={`${owner} Avatar`}
             rounded="full"
@@ -35,7 +35,7 @@ export function Comment({ avatarUrl, owner, date, comment }: CommentProps) {
 
           <Text
             color="dark.100"
-            fontSize="sm"
+            fontSize="xs"
             fontFamily="regular"
             ml={2}
           >
@@ -45,7 +45,7 @@ export function Comment({ avatarUrl, owner, date, comment }: CommentProps) {
 
         <Text
           color="dark.100"
-          fontSize="sm"
+          fontSize="xs"
           fontFamily="regular"
         >
           { formattedDate }
@@ -55,7 +55,7 @@ export function Comment({ avatarUrl, owner, date, comment }: CommentProps) {
       <Text
         mt={4}
         color="dark.200"
-        fontSize="xs"
+        fontSize="sm"
         fontFamily="regular"
       >
         { comment }
