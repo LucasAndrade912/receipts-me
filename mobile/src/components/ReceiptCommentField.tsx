@@ -12,6 +12,7 @@ export function ReceiptCommentField() {
         textAlignVertical="top"
         rounded="lg"
         padding={3}
+        color="dark.50"
         placeholder="Colabore com esta receita enviando um comentário"
         fontSize="xs"
         fontFamily="regular"

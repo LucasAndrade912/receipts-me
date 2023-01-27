@@ -1,14 +1,10 @@
-import { Text } from 'react-native'
 import { ForkKnife, MagnifyingGlass } from 'phosphor-react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { Receipts } from '../screens/Receipts'
+import { Search } from '../screens/Search'
 
 const { Navigator, Screen } = createBottomTabNavigator()
-
-function Search() {
-  return <Text>Pesquisa</Text>
-}
 
 export function TabsRoutes() {
   return (
