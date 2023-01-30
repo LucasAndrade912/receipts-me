@@ -7,7 +7,9 @@ import { RecipeCards } from '../components/ReceipeCards'
 
 import { categoriesMock, receiptsMock } from '../utils/mocks'
 
-export function Receipts() {
+export function FavoriteRecipes() {
+  const favoriteRecipes = receiptsMock.filter(receipt => receipt.favorited)
+
   return (
     <Container>
       <VStack mt={8} ml={6} mb={7}>
@@ -19,10 +21,10 @@ export function Receipts() {
       </VStack>
 
       <Title type="subtitle" ml={6} mb={4}>
-        Veja nossas receitas
+        Suas receitas favoritas
       </Title>
 
-      <RecipeCards recipes={receiptsMock} />
+      <RecipeCards recipes={favoriteRecipes} />
     </Container>
   )
 }

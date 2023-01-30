@@ -1,17 +1,15 @@
-import { Text } from 'react-native'
 import { ForkKnife, Star } from 'phosphor-react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import { TabsRoutes } from './tabs.routes'
 
-import { Receipt } from '../screens/Receipt'
 import { DrawerHeader } from '../components/DrawerHeader'
 
-const { Navigator, Screen } = createDrawerNavigator()
+import { Receipt } from '../screens/Receipt'
+import { FavoriteRecipes } from '../screens/FavoriteRecipes'
 
-function ReceiptsFavorites() {
-  return <Text>Receitas Favoritas</Text>
-}
+
+const { Navigator, Screen } = createDrawerNavigator()
 
 export function DrawerRoutes() {
   return (
@@ -38,8 +36,8 @@ export function DrawerRoutes() {
       />
 
       <Screen
-        name="receiptsFavorites"
-        component={ReceiptsFavorites}
+        name="favoriteRecipes"
+        component={FavoriteRecipes}
         options={{
           drawerLabel: 'Receitas Favoritas',
           drawerIcon: ({ focused }) => (
