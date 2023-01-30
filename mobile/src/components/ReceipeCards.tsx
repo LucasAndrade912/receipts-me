@@ -1,7 +1,7 @@
 import { FlatList } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 
-import { ReceiptCard } from './ReceiptCard'
+import { RecipeCard } from './RecipeCard'
 
 interface RecipeCardsProps {
   recipes: {
@@ -22,9 +22,9 @@ export function RecipeCards({ recipes }: RecipeCardsProps) {
       data={recipes}
       keyExtractor={item => item.id}
       renderItem={({ item }) => (
-        <ReceiptCard
+        <RecipeCard
           key={item.id}
-          onPress={() => navigate('receipt', { id: item.id })}
+          onPress={() => navigate('recipe', { id: item.id })}
           { ...item }
         />
       )}

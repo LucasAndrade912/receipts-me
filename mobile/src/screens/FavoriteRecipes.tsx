@@ -5,10 +5,10 @@ import { Container } from '../components/Container'
 import { Categories } from '../components/Categories'
 import { RecipeCards } from '../components/ReceipeCards'
 
-import { categoriesMock, receiptsMock } from '../utils/mocks'
+import { categoriesMock, recipesMock } from '../utils/mocks'
 
 export function FavoriteRecipes() {
-  const favoriteRecipes = receiptsMock.filter(receipt => receipt.favorited)
+  const favoriteRecipes = recipesMock.filter(recipe => recipe.favorited)
 
   return (
     <Container>

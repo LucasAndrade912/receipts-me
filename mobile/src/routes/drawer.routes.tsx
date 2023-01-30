@@ -5,7 +5,7 @@ import { TabsRoutes } from './tabs.routes'
 
 import { DrawerHeader } from '../components/DrawerHeader'
 
-import { Receipt } from '../screens/Receipt'
+import { Recipe } from '../screens/Recipe'
 import { FavoriteRecipes } from '../screens/FavoriteRecipes'
 
 
@@ -51,8 +51,8 @@ export function DrawerRoutes() {
       />
 
       <Screen
-        name="receipt"
-        component={Receipt}
+        name="recipe"
+        component={Recipe}
         options={{ drawerItemStyle: { display: 'none' } }}
       />
     </Navigator>

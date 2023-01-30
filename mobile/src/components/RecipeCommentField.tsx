@@ -2,7 +2,7 @@ import { Input, Text } from 'native-base'
 
 import { Button } from './Button'
 
-export function ReceiptCommentField() {
+export function RecipeCommentField() {
   return (
     <>
       <Input

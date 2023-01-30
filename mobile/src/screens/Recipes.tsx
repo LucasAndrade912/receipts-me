@@ -5,9 +5,9 @@ import { Container } from '../components/Container'
 import { Categories } from '../components/Categories'
 import { RecipeCards } from '../components/ReceipeCards'
 
-import { categoriesMock, receiptsMock } from '../utils/mocks'
+import { categoriesMock, recipesMock } from '../utils/mocks'
 
-export function Receipts() {
+export function Recipes() {
   return (
     <Container>
       <VStack mt={8} ml={6} mb={7}>
@@ -22,7 +22,7 @@ export function Receipts() {
         Veja nossas receitas
       </Title>
 
-      <RecipeCards recipes={receiptsMock} />
+      <RecipeCards recipes={recipesMock} />
     </Container>
   )
 }

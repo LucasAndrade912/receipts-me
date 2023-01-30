@@ -4,7 +4,7 @@ type CategoryType = {
   selected?: boolean
 }[]
 
-type ReceiptCardType = {
+type RecipeCardType = {
   id: string
   title: string
   imageUrl: string
@@ -13,7 +13,7 @@ type ReceiptCardType = {
   favorited?: boolean
 }[]
 
-type ReceiptType = {
+type RecipeType = {
   title: string
   imageOne: string
   imageTwo?: string
@@ -42,7 +42,7 @@ export const categoriesMock: CategoryType = [
   { id: '5', title: '🍕 Pizzas', selected: true }
 ]
 
-export const receiptsMock: ReceiptCardType = [
+export const recipesMock: RecipeCardType = [
   { id: '1', title: 'Torta de maçã', imageUrl: 'https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80', owner: 'Lucas Andrade', stars: 12 },
   { id: '2', title: 'Pizza 4 queijos', imageUrl: 'https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', owner: 'Maria Joana', stars: 21, favorited: true },
   { id: '3', title: 'X-Burguer', imageUrl: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=815&q=80', owner: 'José Ribeiro', stars: 17 },
@@ -53,7 +53,7 @@ export const receiptsMock: ReceiptCardType = [
   { id: '8', title: 'Torta de chocolate', imageUrl: 'https://images.unsplash.com/photo-1546898976-9850b9bba1e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80', owner: 'Lucas Andrade', stars: 32, favorited: true },
 ]
 
-export const receiptMock: ReceiptType = {
+export const recipeMock: RecipeType = {
   title: 'Torta de maçã',
   imageOne: 'https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
   imageTwo: 'https://images.unsplash.com/photo-1506127946181-abb01a32593c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',

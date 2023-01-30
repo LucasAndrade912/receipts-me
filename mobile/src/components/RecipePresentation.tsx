@@ -3,7 +3,7 @@ import { ForkKnife, Timer } from 'phosphor-react-native'
 
 import { Title } from './Title'
 
-interface ReceiptPresentationProps {
+interface RecipePresentationProps {
   title: string
   imageOne: string
   imageTwo?: string
@@ -12,7 +12,7 @@ interface ReceiptPresentationProps {
   owner: string
 }
 
-export function ReceiptPresentation(props: ReceiptPresentationProps) {
+export function RecipePresentation(props: RecipePresentationProps) {
   const {
     title,
     imageOne,

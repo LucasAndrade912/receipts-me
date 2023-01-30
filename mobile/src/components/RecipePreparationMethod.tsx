@@ -2,11 +2,11 @@ import { Text, VStack } from 'native-base'
 
 import { Title } from './Title'
 
-interface ReceiptPreparationMethodProps {
+interface RecipePreparationMethodProps {
   preparationMethod: string[]
 }
 
-export function ReceiptPreparationMethod({ preparationMethod }: ReceiptPreparationMethodProps) {
+export function RecipePreparationMethod({ preparationMethod }: RecipePreparationMethodProps) {
   return (
     <VStack justifyContent="flex-start" w="full">
       <Title type="subtitle" textAlign="center">

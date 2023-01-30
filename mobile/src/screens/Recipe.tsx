@@ -3,14 +3,14 @@ import { ScrollView, Divider, VStack } from 'native-base'
 import { Container } from '../components/Container'
 
 import { Comment } from '../components/Comment'
-import { ReceiptIngredients } from '../components/ReceiptIngredients'
-import { ReceiptPresentation } from '../components/ReceiptPresentation'
-import { ReceiptPreparationMethod } from '../components/ReceiptPreparationMethod'
-import { ReceiptCommentField } from '../components/ReceiptCommentField'
+import { RecipeIngredients } from '../components/RecipeIngredients'
+import { RecipePresentation } from '../components/RecipePresentation'
+import { RecipePreparationMethod } from '../components/RecipePreparationMethod'
+import { RecipeCommentField } from '../components/RecipeCommentField'
 
-import { receiptMock } from '../utils/mocks'
+import { recipeMock } from '../utils/mocks'
 
-export function Receipt() {
+export function Recipe() {
   const {
     title,
     imageOne,
@@ -21,7 +21,7 @@ export function Receipt() {
     ingredients,
     preparationMethod,
     comments
-  } = receiptMock
+  } = recipeMock
 
   return (
     <Container>
@@ -31,7 +31,7 @@ export function Receipt() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ alignItems: 'center', paddingBottom: 80 }}
       >
-        <ReceiptPresentation
+        <RecipePresentation
           title={title}
           imageOne={imageOne}
           imageTwo={imageTwo}
@@ -42,19 +42,19 @@ export function Receipt() {
 
         <Divider my={8} bgColor="light.100" />
 
-        <ReceiptIngredients
+        <RecipeIngredients
           ingredients={ingredients}
         />
 
         <Divider my={8} bgColor="light.100" />
 
-        <ReceiptPreparationMethod
+        <RecipePreparationMethod
           preparationMethod={preparationMethod}
         />
 
         <Divider my={8} bgColor="light.100" />
 
-        <ReceiptCommentField />
+        <RecipeCommentField />
 
         <Divider my={8} bgColor="light.100" />
 

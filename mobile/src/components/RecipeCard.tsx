@@ -1,7 +1,14 @@
-import { Pressable, View, Text, Image, HStack, IPressableProps } from 'native-base'
 import { Star } from 'phosphor-react-native'
+import {
+  Pressable,
+  View,
+  Text,
+  Image,
+  HStack,
+  IPressableProps
+} from 'native-base'
 
-interface ReceiptCardProps extends IPressableProps {
+interface RecipeCardProps extends IPressableProps {
   id: string
   title: string
   imageUrl: string
@@ -10,7 +17,7 @@ interface ReceiptCardProps extends IPressableProps {
   favorited?: boolean
 }
 
-export function ReceiptCard({
+export function RecipeCard({
   id,
   title,
   imageUrl,
@@ -18,7 +25,7 @@ export function ReceiptCard({
   stars,
   favorited = false,
   ...rest
-}: ReceiptCardProps) {
+}: RecipeCardProps) {
   return (
     <Pressable
       _pressed={{

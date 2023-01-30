@@ -5,7 +5,7 @@ import { DrawerHeaderProps } from '@react-navigation/drawer'
 export function DrawerHeader({ navigation, route }: DrawerHeaderProps) {
   const { name } = route
 
-  const isReceiptRoute = name === 'receipt'
+  const isRecipeRoute = name === 'recipe'
 
   function handleOpenDrawer() {
     navigation.openDrawer()
@@ -24,13 +24,13 @@ export function DrawerHeader({ navigation, route }: DrawerHeaderProps) {
       px={6}
     >
       <Pressable
-        onPress={isReceiptRoute ? handleGoBack : handleOpenDrawer}
+        onPress={isRecipeRoute ? handleGoBack : handleOpenDrawer}
         _pressed={{
           opacity: 0.6
         }}
       >
         {
-          isReceiptRoute
+          isRecipeRoute
             ? <ArrowLeft size={32} color="#FFF" />
             : <List size={32} color="#FFF" />
         }

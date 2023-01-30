@@ -1,7 +1,7 @@
 import { ForkKnife, MagnifyingGlass } from 'phosphor-react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import { Receipts } from '../screens/Receipts'
+import { Recipes } from '../screens/Recipes'
 import { Search } from '../screens/Search'
 
 const { Navigator, Screen } = createBottomTabNavigator()
@@ -9,7 +9,7 @@ const { Navigator, Screen } = createBottomTabNavigator()
 export function TabsRoutes() {
   return (
     <Navigator
-      initialRouteName="receipts"
+      initialRouteName="recipes"
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         headerShown: false,
@@ -20,15 +20,15 @@ export function TabsRoutes() {
         tabBarIcon: ({ focused }) => {
           const color = focused ? '#FFF' : '#D8D3D3'
 
-          return route.name === 'receipts'
+          return route.name === 'recipes'
             ? <ForkKnife size={32} color={color} weight="regular" />
             : <MagnifyingGlass size={32} color={color} weight="bold" />
         }
       })}
     >
       <Screen
-        name="receipts"
-        component={Receipts}
+        name="recipes"
+        component={Recipes}
       />
 
       <Screen

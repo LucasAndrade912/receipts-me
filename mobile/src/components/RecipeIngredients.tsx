@@ -2,7 +2,7 @@ import { Text, VStack } from 'native-base'
 
 import { Title } from './Title'
 
-interface ReceiptIngredientsProps {
+interface RecipeIngredientsProps {
   ingredients: {
     quantity: number
     name: string
@@ -10,7 +10,7 @@ interface ReceiptIngredientsProps {
   }[]
 }
 
-export function ReceiptIngredients({ ingredients }: ReceiptIngredientsProps) {
+export function RecipeIngredients({ ingredients }: RecipeIngredientsProps) {
   return (
     <VStack justifyContent="flex-start" w="full">
       <Title type="subtitle" textAlign="center">
