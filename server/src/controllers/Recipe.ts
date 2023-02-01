@@ -22,12 +22,10 @@ export class Recipe {
       bookMarked,
       Recipe_Ingredient,
       Recipe_Category,
-
-      google_id,
+      google_id
     } = request.body
 
     let date_register = request.body.date_register
-
 
     date_register = new Date(date_register)
 
@@ -46,12 +44,16 @@ export class Recipe {
 
         bookMarked,
         comment,
-        google_id,
         Recipe_Category,
         Recipe_Ingredient,
+
+        User: {
+          connect: {
+            google_id: google_id
+          }
+        },
       },
     })
     return response.json(create)
   }
-
 }
