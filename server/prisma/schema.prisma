@@ -49,6 +49,8 @@ model Comment {
   Recipe     Recipe @relation(fields: [cod_recipe], references: [cod_recipe])
   cod_recipe String
 
+  text String
+
   @@id([google_id, cod_recipe])
 }
 

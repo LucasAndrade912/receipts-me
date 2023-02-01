@@ -3,9 +3,9 @@ import { prismaClient } from '../database/prismaClient'
 
 export class User {
   async getAllUsers(request: Request, response: Response) {
-    const allRecipes = await prismaClient.user.findMany()
+    const allUsers = await prismaClient.user.findMany()
 
-    return response.json(allRecipes)
+    return response.json(allUsers)
   }
 
   async createUser(request: Request, response: Response) {

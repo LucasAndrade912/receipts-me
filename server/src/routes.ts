@@ -1,16 +1,18 @@
 import { Router } from 'express'
 
-
 const router = Router()
 
 import { Recipe } from './controllers/Recipe'
 import { User } from './controllers/User'
+import { Comment } from './controllers/Comment'
 
 const getAllUsers = new User().getAllUsers
 const createUser = new User().createUser
 
 const getAllRecipes = new Recipe().getAllRecipes
 const createRecipe = new Recipe().createRecipe
+
+const createComment = new Comment().createComment
 
 router.get('/', (req, res) => {
   res.json({ message: 'Server is running' })
@@ -28,5 +30,9 @@ router.post('/users', createUser) // creates a new user
 /* Recipe methods */
 router.get('/recipes', getAllRecipes)
 router.post('/recipes', createRecipe)
+
+
+/* Comment methods */
+router.post('/comments', createComment)
 
 export default router
