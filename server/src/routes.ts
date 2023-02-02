@@ -12,6 +12,9 @@ const createUser = new User().createUser
 const getAllRecipes = new Recipe().getAllRecipes
 const createRecipe = new Recipe().createRecipe
 
+const getAllComents = new Comment().getAllComents
+const getAllComentsFromPost = new Comment().getAllComentsFromPost
+const getAllComentsFromUser  = new Comment().getAllComentsFromUser
 const createComment = new Comment().createComment
 
 router.get('/', (req, res) => {
@@ -33,6 +36,9 @@ router.post('/recipes', createRecipe)
 
 
 /* Comment methods */
+router.get('/comments', getAllComents)
+router.get('/comments/post/:cod_recipe', getAllComentsFromPost)
+router.get('/comments/user/:google_id', getAllComentsFromUser)
 router.post('/comments', createComment)
 
 export default router
