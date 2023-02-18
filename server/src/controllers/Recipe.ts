@@ -29,6 +29,8 @@ export class Recipe {
 
     date_register = new Date(date_register)
 
+
+    
     const create = await prismaClient.recipe.create({
       data: {
         cod_recipe,
