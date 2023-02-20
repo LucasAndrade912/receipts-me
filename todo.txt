@@ -1,0 +1,8 @@
+User V
+comment V
+bookmarked V
+recipe V
+Category V
+Ingredient V
+Recipe_Category V
+Recipe_Ingredient V
